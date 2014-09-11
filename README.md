@@ -26,7 +26,7 @@ TODO
 
 * Remove duplicates from container without sorting the container
 
-```
+```C++
 #include <algorithm>
 #include <vector>
 struct target_less
@@ -63,29 +63,36 @@ template<class It> It uniquify(It begin, It const end)
 ```
 
 * Remove duplicates from container
-```
+
+```C++
 sort( vec.begin(), vec.end() );
 vec.erase( unique( vec.begin(), vec.end() ), vec.end() );
 ```
+
 * Load file into string
-```
+
+```C++
 std::ifstream t("file.txt");
 std::stringstream buffer;
 buffer << t.rdbuf();
+```
+
 Detecting endianness programmatically
 hash function for string
-```
+
 * isExist
 * isDir
 * isFile
 
 * string low case
-```
+
+```C++
 #include <algorithm>
 #include <string> 
 
 std::string data = "Abc"; 
 std::transform(data.begin(), data.end(), data.begin(), ::tolower);
+
 ```
 
 * int to string
@@ -95,7 +102,8 @@ std::transform(data.begin(), data.end(), data.begin(), ::tolower);
 * mktemp
 
 * list of files in a directory
-```
+
+```C++
 DIR *dir;
 struct dirent *ent;
 if ((dir = opendir ("c:\\src\\")) != NULL) {
@@ -109,16 +117,19 @@ if ((dir = opendir ("c:\\src\\")) != NULL) {
   perror ("");
   return EXIT_FAILURE;
 }
+```
 
 http://stackoverflow.com/questions/612097/how-can-i-get-a-list-of-files-in-a-directory-using-c-or-c
-```
+
 
 * C++ Erase vector element by value rather than by position?
-```
+
+```C++
 vec.erase(std::remove(vec.begin(), vec.end(), 8), vec.end());
 ```
 * How to get my ip address in c Linux -…
-```
+
+```C++
 getifaddrs(&addrs);
 tmp = addrs;
 
@@ -135,8 +146,10 @@ while (tmp)
 
 freeifaddrs(addrs);
 ```
+
 * How do I get the directory that a program is running from?
-```
+
+```C++
 #include <stdio.h>  /* defines FILENAME_MAX */
 #ifdef WINDOWS
     #include <direct.h>
@@ -158,15 +171,18 @@ cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
 printf ("The current working directory is %s", cCurrentPath);
 ```
 Windows:
-```
+
+```C++
 int bytes = GetModuleFileName(NULL, pBuf, len);
 if(bytes == 0)
 	return -1;
 else
 	return bytes;
 ```
+
 Linux:
-```
+
+```C++
 char szTmp[32];
 sprintf(szTmp, "/proc/%d/exe", getpid());
 int bytes = MIN(readlink(szTmp, pBuf, len), len - 1);
@@ -179,7 +195,7 @@ return bytes;
 
 * Converting YUV into BGR or RGB
 
-```
+```C++
 for(int i = 0, j=0; i < 1280 * 720 * 3; i+=6, j+=4)
 {
     m_RGB->imageData[i] = pData[j] + pData[j+3]*((1 - 0.299)/0.615);
@@ -193,7 +209,7 @@ for(int i = 0, j=0; i < 1280 * 720 * 3; i+=6, j+=4)
 
 * Convert time_t to string with format YYYY-MM-DD HH:MM:SS
 
-```
+```C++
 char buff[20];
 time_t now = time(NULL);
 strftime(buff, 20, "%Y-%m-%d %H:%M:%S", localtime(&now));
@@ -201,7 +217,7 @@ strftime(buff, 20, "%Y-%m-%d %H:%M:%S", localtime(&now));
 
 * How to convert a string variable containing time to time_t type in c++?
 
-```
+```C++
 const char *time_details = "16:35:12";
 struct tm tm;
 strptime(time_details, "%H:%M:%S", &tm);
@@ -210,7 +226,7 @@ time_t t = mktime(&tm);  // t is now your desired time_t
 
 * Path to binary in C
 
-```
+```C++
 #include <stdio.h>
 #include <unistd.h>
 
