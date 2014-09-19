@@ -14,6 +14,6 @@ uint64_t msTime()
     strm << "Error: [" << errCode << "] " << strerror(errCode);
     throw std::runtime_error(strm.str());
   }
-  return tv.tv_sec * 1000 + tv.tv_usec;
+  return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
 
