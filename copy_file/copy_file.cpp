@@ -2,7 +2,7 @@
 #include <fstream>
 #include <stdexcept>
 
-void copyFile(std::string fromFileName, std::string toFileName)
+void copyFile(const std::string &fromFileName, const std::string &toFileName)
 {
   std::ifstream from(fromFileName, std::ios::binary);
   if (!from.good())

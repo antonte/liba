@@ -1,4 +1,4 @@
 #pragma once
 #include <string>
 
-void copyFile(std::string fromFileName, std::string toFileName);
+void copyFile(const std::string &fromFileName, const std::string &toFileName);

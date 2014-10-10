@@ -2,7 +2,7 @@
 #include <fstream>
 #include <stdexcept>
 
-uint64_t fileSize(std::string fileName)
+uint64_t fileSize(const std::string &fileName)
 {
   std::ifstream f(fileName, std::ifstream::ate | std::ifstream::binary);
   if (!f.good())

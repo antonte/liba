@@ -2,4 +2,4 @@
 #include <string>
 #include <cstdint>
 
-uint64_t fileSize(std::string fileName);
+uint64_t fileSize(const std::string &fileName);
