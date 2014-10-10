@@ -3,11 +3,36 @@ liba
 
 Micro C++ libraries
 
+Build Instuction
+----------------
+* use my https://github.com/antonte/build tool
+* in the library
+$ cd library_nam
+* call build a
+$ build a
+
+Check if a File Exist
+---------------------
+
+```C++
+#include <is_file_exist.hpp>
+
+bool isFileExist(const std::string &fileName) noexcept;
+```
+
+Copy File
+---------
+
+```C++
+#include <copy_file.hpp>
+
+void copyFile(const std::string &fromFileName, const std::string &toFileName);
+```
+
 
 TODO
 ====
 * parse a url
-* check if a file exist
 * SOAP Library
 * How to get file extension from string
 * How can I extract the file name and extension from a path
